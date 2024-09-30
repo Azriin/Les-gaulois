@@ -1,5 +1,7 @@
 package personnages;
 
+import java.util.Iterator;
+
 public class Gaulois {
 	private String nom;
 	private int force;
@@ -9,6 +11,10 @@ public class Gaulois {
 
 	public String getNom() {
 		return nom;
+	}
+
+	public Equipement[] getTrophees() {
+		return trophees;
 	}
 
 	public Gaulois(String nom, int force) {
@@ -52,6 +58,13 @@ public class Gaulois {
 		effetPotion *= forcePotion;
 	}
 
+	public void faireUneDonnation(Musee musee) {
+		String text = "Je donne au musee tous mes trophees :";
+		for (int i = 0; i< nbTrophees; i++) {
+			text += "\n-" + trophees[i];
+		parler(text);
+		}
+	}
 
 	public static void main(String[] args) {
 		Gaulois asterix = new Gaulois("Asterix", 8);

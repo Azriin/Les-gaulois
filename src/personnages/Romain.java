@@ -5,12 +5,17 @@ public class Romain {
 	private int force;
 	private Equipement[] equipements = new Equipement[2];
 	private int nbEquipements = 0;
+	private boolean vainqueur = true;
 
 	
 	public Romain(String nom, int force) {
 		assert force >= 0 :"la force d’un Romain est toujours positive";
 		this.nom = nom;
 		this.force = force;
+	}
+
+	public boolean isVainqueur() {
+		return vainqueur;
 	}
 
 	public int getForce() {
@@ -76,9 +81,11 @@ public class Romain {
 		}
 		parler(texte);
 		forceCoup -= resistanceEquipement;
-		if (forceCoup < 1) {
-			forceCoup = 1;
-		} 
+		if (forceCoup <= 0) {
+			forceCoup = 0;
+			parler("Je suis plus fort que toi, tu ne peux pas gagner !");
+			vainqueur = false;
+		}
 		return forceCoup;
 	}
 	
