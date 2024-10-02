@@ -41,7 +41,7 @@ public class Village {
 	}
 	
 	public static void main(String[] args) {
-		Village village = new Village("Village des Irréductibles", 30);
+		Village village = new Village("Village des Irrï¿½ductibles", 30);
 //		Gaulois gaulois = village.trouverHabitant(30);
 //		Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 30 out of bounds for length 30
 //		premiere case du tableau == 0, donc dans un tableau a 30 elt, la derniere case a le num 29

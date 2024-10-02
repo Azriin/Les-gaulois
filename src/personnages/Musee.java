@@ -5,7 +5,21 @@ public class Musee {
 	private int nbTrophee = 0;
 	
 	public void donnerTrophees(Gaulois gaulois, Equipement equipement) {
-		trophees[nbTrophee] = new Trophee(gaulois, equipement);
-		nbTrophee ++;
+		if (nbTrophee < 200) {
+			trophees[nbTrophee] = new Trophee(gaulois, equipement);
+			nbTrophee ++;	
+		}
+	}
+
+	public String extraireInstructionsOCaml(){
+		String text = "let musee = [\n";
+		for (int i = 0; i < nbTrophee; i++){
+			text += "\"" + trophees[i].donnerNom() + "\", \"" + trophees[i].getEquipement() + "\"";
+			if (i != nbTrophee - 1) {
+				text += ";\n";
+			}
+		}
+		text += "\n]";
+		return text;
 	}
 }

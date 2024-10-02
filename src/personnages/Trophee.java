@@ -10,6 +10,14 @@ public class Trophee {
 		this.equipement = equipement;
 	}
 	
+	public Equipement getEquipement() {
+		return equipement;
+	}
+
+	public Gaulois getGaulois() {
+		return gaulois;
+	}
+
 	public String donnerNom() {
 		return gaulois.getNom();
 	}
